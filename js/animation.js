@@ -18,3 +18,11 @@ window.addEventListener('load', function(){
 
 
 });
+
+document.getElementById('BurgerMenuWrapper').addEventListener("click", function(){
+
+   var monMenu = document.getElementById('side-menu')
+
+    monMenu.classList.add("ouverture");
+
+});

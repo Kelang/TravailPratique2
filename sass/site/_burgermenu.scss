@@ -1,15 +1,4 @@
 /*******************BURGER MENU********************/
-#BurgerMenuWrapper{
-    display: block;
-    position: fixed;
-    padding: 20px;
-    //top: 47%;
-    z-index: 999;
-    cursor: pointer;
-}
-
-
-
 .BurgerMenuLine{
     width: 25px;
     height: 3px;
@@ -20,3 +9,46 @@
 }
 
 
+#BurgerMenuWrapper{
+    display: block;
+    position: fixed;
+    padding: 20px;
+    top: 0%;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.ouverture{
+
+    width: 250px;
+}
+
+.MenuContainer{
+    //background-color: blue;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    position: fixed;
+}
+
+.navContainer{
+    display: flex;
+    flex-direction: column;
+    background-color: red;
+    height: 100vh;
+    justify-content: space-evenly;
+    
+
+    a{
+        color: green;
+        margin-left: 1em;
+        font-size: 3em;
+
+    }
+}
+
+
+
+.site-logo{
+    z-index: 20;
+}
