@@ -1,0 +1,22 @@
+/*******************BURGER MENU********************/
+#BurgerMenuWrapper{
+    display: block;
+    position: fixed;
+    padding: 20px;
+    //top: 47%;
+    z-index: 999;
+    cursor: pointer;
+}
+
+
+
+.BurgerMenuLine{
+    width: 25px;
+    height: 3px;
+    background-color: $color__background-menu;
+    margin-top: 5px;
+    border-radius: 10px;
+    transition: all cubic-bezier(0.25, 0.1, 0.28, 1.54) 0.32s;
+}
+
+
