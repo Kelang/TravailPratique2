@@ -136,9 +136,7 @@
 
 #BurgerMenuWrapper {
   display: block;
-  position: fixed;
-  padding: 20px;
-  top: 0%;
+  position: absolute;
   z-index: 1;
   cursor: pointer;
 }
@@ -172,13 +170,13 @@
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  width: 35%;
+  width: 100%;
 }
 
 .navContainer a {
   color: white;
   margin-left: 1em;
-  font-size: 3em;
+  font-size: 2em;
 }
 
 .overflow {
@@ -192,16 +190,125 @@
 
 .site-logo {
   z-index: 20;
+  display: none;
 }
 
 .fermeture {
   padding: .5em;
   display: inline-block;
   text-align: center;
-  width: 10%;
+  width: 20%;
   margin-left: 1em;
   background-color: #000000;
-  margin-top: -2.5em;
+  margin-top: -2em;
+}
+
+.site-branding h1 {
+  padding: 1.5em;
+}
+
+.site-description {
+  display: block;
+  color: #767676;
+  font-weight: normal;
+  text-align-last: center;
+  margin: 0;
+}
+
+#lesNouvelles, #lesEvenements {
+  margin-left: 1em;
+  margin-right: 1em;
+  list-style: none;
+}
+
+/*************************************************************/
+@media only screen and (min-width: 1168px) {
+  .BurgerMenuLine {
+    width: 25px;
+    height: 3px;
+    background-color: orange;
+    margin-top: 5px;
+    border-radius: 10px;
+    -webkit-transition: all cubic-bezier(0.25, 0.1, 0.28, 1.54) 0.32s;
+    transition: all cubic-bezier(0.25, 0.1, 0.28, 1.54) 0.32s;
+  }
+  #BurgerMenuWrapper {
+    display: block;
+    position: fixed;
+    padding: 20px;
+    top: 0%;
+    z-index: 1;
+    cursor: pointer;
+  }
+  .MenuContainer {
+    background-color: rgba(0, 0, 0, 0.6);
+    top: 0;
+    left: 0;
+    z-index: 999;
+    position: fixed;
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+    overflow-x: hidden;
+    width: 100%;
+    -webkit-transition: .8s;
+    transition: .8s;
+    -webkit-transition-timing-function: ease-in-out;
+            transition-timing-function: ease-in-out;
+  }
+  .navContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    background-color: #1a1a1a;
+    height: 100vh;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    width: 35%;
+  }
+  .navContainer a {
+    color: white;
+    margin-left: 1em;
+    font-size: 3em;
+  }
+  .overflow {
+    overflow: hidden;
+  }
+  .ouverture {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+  .site-logo {
+    z-index: 20;
+    display: inline;
+  }
+  .fermeture {
+    padding: .5em;
+    display: inline-block;
+    text-align: center;
+    width: 10%;
+    margin-left: 1em;
+    background-color: #000000;
+    margin-top: -.5em;
+  }
+  /************************************/
+  .site-description {
+    display: inline;
+    color: #767676;
+    font-weight: normal;
+    margin: 0;
+  }
+  .site-branding h1 {
+    padding: 1.5em;
+  }
+  #lesNouvelles, #lesEvenements {
+    margin-left: 2.5em;
+    list-style: none;
+  }
 }
 
 /*
@@ -217,4 +324,71 @@
  Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
  Text Domain:  twenty-nineteen-enfant
 */
+.session1 {
+  border-bottom: 5px solid blue;
+}
+
+.session2 {
+  border-bottom: 5px solid orange;
+}
+
+.session3 {
+  border-bottom: 5px solid red;
+}
+
+.session4 {
+  border-bottom: 5px solid purple;
+}
+
+.session5 {
+  border-bottom: 5px solid yellow;
+}
+
+.session6 {
+  border-bottom: 5px solid greenyellow;
+}
+
+main {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+main article h2 {
+  font-size: 1em;
+}
+
+.entry {
+  margin: 0;
+}
+
+@media only screen and (min-width: 1168px) {
+  .entry {
+    margin: 0 0 0 0;
+  }
+  main {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[5];
+        grid-template-columns: repeat(5, 1fr);
+    grid-gap: 30px;
+    grid-row-gap: 30px;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    margin: 0 1em 1em 1em;
+  }
+  main article {
+    -webkit-box-shadow: 5px 10px #888888;
+            box-shadow: 5px 10px #888888;
+    border: 1px solid black;
+  }
+  main article h2 {
+    font-size: 1em;
+    padding-bottom: 1em;
+  }
+}
 /*# sourceMappingURL=style.css.map */

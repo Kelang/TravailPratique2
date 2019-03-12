@@ -11,9 +11,9 @@
 
 #BurgerMenuWrapper{
     display: block;
-    position: fixed;
-    padding: 20px;
-    top: 0%;
+    position: absolute;
+    //padding: 20px;
+    //top: 0%;
     z-index: 1;
     cursor: pointer;
 }
@@ -37,12 +37,12 @@
     background-color: rgb(26, 26, 26);
     height: 100vh;
     justify-content: space-evenly;
-    width: 35%;
+    width: 100%;
 
     a{
         color: rgb(255, 255, 255);
         margin-left: 1em;
-        font-size: 3em;
+        font-size: 2em;
 
     }
 }
@@ -57,14 +57,131 @@
 
 .site-logo{
     z-index: 20;
+    display: none;
 }
 
 .fermeture{
     padding: .5em;
     display: inline-block;
     text-align: center;
-    width: 10%;
+    width: 20%;
     margin-left: 1em;
     background-color: $color__text-menu;
-    margin-top: -2.5em;
+    margin-top: -2em;
+}
+
+.site-branding h1{
+    padding: 1.5em;
+}
+
+.site-description {
+     display: block; 
+    color: #767676;
+    font-weight: normal;
+    text-align-last: center;
+    margin: 0;
+}
+
+#lesNouvelles, #lesEvenements{
+    margin-left: 1em;
+    margin-right: 1em;
+    list-style: none;
+}
+
+
+/*************************************************************/
+@include media(desktop){
+
+    .BurgerMenuLine{
+        width: 25px;
+        height: 3px;
+        background-color: orange;
+        margin-top: 5px;
+        border-radius: 10px;
+        transition: all cubic-bezier(0.25, 0.1, 0.28, 1.54) 0.32s;
+    }
+    
+    
+    #BurgerMenuWrapper{
+        display: block;
+        position: fixed;
+        padding: 20px;
+        top: 0%;
+        z-index: 1;
+        cursor: pointer;
+    }
+    
+    .MenuContainer{
+        background-color: rgba(0, 0, 0, 0.6);
+        top: 0;
+        left: 0;
+        z-index: 999;
+        position: fixed;
+        transform: translateX(-100%);
+        overflow-x: hidden;
+        width: 100%;
+        transition: .8s;
+        transition-timing-function: ease-in-out;
+    }
+    
+    .navContainer{
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(26, 26, 26);
+        height: 100vh;
+        justify-content: space-evenly;
+        width: 35%;
+    
+        a{
+            color: rgb(255, 255, 255);
+            margin-left: 1em;
+            font-size: 3em;
+    
+        }
+    }
+    
+    .overflow{
+        overflow: hidden;
+    }
+    
+    .ouverture{
+        transform: translateX(0%);
+    }
+    
+    .site-logo{
+        z-index: 20;
+        display: inline;
+    }
+    
+    .fermeture{
+        padding: .5em;
+        display: inline-block;
+        text-align: center;
+        width: 10%;
+        margin-left: 1em;
+        background-color: $color__text-menu;
+        margin-top: -.5em;
+    }
+
+    /************************************/
+    .site-description {
+        display: inline;
+        color: #767676;
+        font-weight: normal;
+        margin: 0;
+    }
+
+
+    .site-branding h1{
+        padding: 1.5em;
+    }
+
+
+    #lesNouvelles, #lesEvenements{
+        margin-left: 2.5em;
+        list-style: none;
+    }
+
+
+
 }

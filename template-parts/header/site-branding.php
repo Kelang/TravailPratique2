@@ -21,7 +21,9 @@
 			<button class="fermeture" id="fermetureMenu">X</button>
 			<a class="navLink souligner" href="/wordpress">Accueil</a>
 			<a class="navLink souligner" href="cours">Grille de cours</a>
-			<a class="navLink souligner" href="/">Programmation</a>
+			<a class="navLink souligner" href="cours/tim-151/">TIM-151</a>
+			<a class="navLink souligner" href="cours/tim-345/">TIM-345</a>
+			<a class="navLink souligner" href="cours/tim-535/">TIM-535</a>
 		</nav>
 	</div>
 </div>
