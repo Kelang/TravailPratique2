@@ -14,9 +14,11 @@ get_header();
 
 	<section id="primary" class="content-area">
 		<main id="main" class="site-main">
-    
+
+        <section id="lesNouvelles">
+        <h2 class="widget-title">Nouvelles</h2>
 			<?php
-/*
+/*          
 			/* Start the Loop 
 			while ( have_posts() ) :
 				the_post();
@@ -30,6 +32,7 @@ get_header();
 
             endwhile; // End of the loop.
   */          
+            
             // The Query
             $args = array('category_name' => 'nouvelles');
             $query1 = new WP_Query( $args );
@@ -38,7 +41,7 @@ get_header();
                 // The Loop
                 while ( $query1->have_posts() ) {
                     $query1->the_post();
-                    echo '<li>' . get_the_title() . '</li>';
+                    echo '<li>' . '<a href="'. get_permalink().'" target="_blank">'. get_the_title().'</a>' . '</li>';
                 }
                 
                 /* Restore original Post Data 
@@ -50,6 +53,12 @@ get_header();
                 wp_reset_postdata();
             }
 
+			?>
+            </section>
+            <section id="lesEvenements">
+            <h2 class="widget-title">Événements</h2>
+			<?php         
+            
             /* The 2nd Query (without global var) */
             $args2 = array('category_name' => 'evenements');
             $query2 = new WP_Query( $args2 );
@@ -58,13 +67,17 @@ get_header();
                 // The 2nd Loop
                 while ( $query2->have_posts() ) {
                     $query2->the_post();
-                    echo '<li>' . get_the_title( $query2->post->ID ) . '</li>';
+                    
+                    echo '<li>' . '<a href="'. get_permalink().'" target="_blank">'. get_the_title( $query2->post->ID ).'</a>' . '</li>';
                 }
 
                 // Restore original Post Data
                 wp_reset_postdata();
             }
+
 			?>
+            </section>
+
             
 
 		</main><!-- #main -->
