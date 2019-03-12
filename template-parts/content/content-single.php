@@ -43,32 +43,24 @@
 		);
 		?>
 		<?php if( get_field('nombres_dheures') ): ?>
-		<section class='champ'>
+		<section class='heures'>
 			Nombre d'heures :
 			<?php the_field('nombres_dheures'); ?>
 		</section>
 		<?php endif; ?>
 		<?php if( get_field('professeurs') ): ?>
-		<section class='champ'>
+		<section class='profs'>
 			Professeurs :
 			<?php the_field('professeurs'); ?>
 		</section>
 		<?php endif; ?>
-		<?php if( get_field('image1') ): ?>
+		<?php if( get_field('image1') || get_field('image2') || get_field('image3')  ): ?>
 		
 		<img src="<?php the_field('image1'); ?>" />
-
-		<?php endif; ?>
-		<?php if( get_field('image2') ): ?>
-		
 		<img src="<?php the_field('image2'); ?>" />
-
-		<?php endif; ?>
-		<?php if( get_field('image3') ): ?>
-		
 		<img src="<?php the_field('image3'); ?>" />
-
 		<?php endif; ?>
+
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
