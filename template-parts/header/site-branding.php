@@ -7,7 +7,7 @@
  * @since 1.0.0
  */
 ?>
-<!--
+
 <div id="BurgerMenuWrapper">
 	<div class="BurgerMenu menu">
 		<div class="BurgerMenuLine line1"></div>
@@ -18,13 +18,14 @@
 <div id="side-menu" class="MenuContainer ">
 	<div class="laNavigation">
 		<nav class="navContainer">
-			<a class="navLink souligner" href="/">Accueil</a>
-			<a class="navLink souligner" href="/cours">Grille de cours</a>
+			<button class="fermeture" id="fermetureMenu">X</button>
+			<a class="navLink souligner" href="/wordpress">Accueil</a>
+			<a class="navLink souligner" href="cours">Grille de cours</a>
 			<a class="navLink souligner" href="/">Programmation</a>
 		</nav>
 	</div>
 </div>
--->
+
 <div class="site-branding">
 
 	<?php if ( has_custom_logo() ) : ?>

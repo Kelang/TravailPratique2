@@ -2,7 +2,7 @@
 .BurgerMenuLine{
     width: 25px;
     height: 3px;
-    background-color: $color__background-menu;
+    background-color: orange;
     margin-top: 5px;
     border-radius: 10px;
     transition: all cubic-bezier(0.25, 0.1, 0.28, 1.54) 0.32s;
@@ -18,38 +18,53 @@
     cursor: pointer;
 }
 
-.ouverture{
-
-    width: 250px;
-}
-
 .MenuContainer{
-    //background-color: blue;
+    background-color: rgba(0, 0, 0, 0.6);
     top: 0;
     left: 0;
     z-index: 999;
     position: fixed;
+    transform: translateX(-100%);
+    overflow-x: hidden;
+    width: 100%;
+    transition: .8s;
+    transition-timing-function: ease-in-out;
 }
 
 .navContainer{
     display: flex;
     flex-direction: column;
-    background-color: red;
+    background-color: rgb(26, 26, 26);
     height: 100vh;
     justify-content: space-evenly;
-    
+    width: 35%;
 
     a{
-        color: green;
+        color: rgb(255, 255, 255);
         margin-left: 1em;
         font-size: 3em;
 
     }
 }
 
+.overflow{
+    overflow: hidden;
+}
 
-/*
+.ouverture{
+    transform: translateX(0%);
+}
+
 .site-logo{
     z-index: 20;
 }
-*/
+
+.fermeture{
+    padding: .5em;
+    display: inline-block;
+    text-align: center;
+    width: 10%;
+    margin-left: 1em;
+    background-color: $color__text-menu;
+    margin-top: -2.5em;
+}

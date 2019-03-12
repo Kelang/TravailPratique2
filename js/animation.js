@@ -16,13 +16,23 @@ window.addEventListener('load', function(){
 
     monContenu.classList.add("contenuAnim");
 
+    var bigContainer = document.querySelector("html");
+    var monMenu = document.querySelector(".MenuContainer");
+    document.getElementById("BurgerMenuWrapper").addEventListener("click", function(){
+        bigContainer.classList.add("overflow");
+        monMenu.classList.add("ouverture");
+        console.log(monMenu);
+    });
+
+    document.getElementById("fermetureMenu").addEventListener("click", function(){
+        bigContainer.classList.remove("overflow");
+        monMenu.classList.remove("ouverture");
+        console.log(monMenu);
+    });
+
 
 });
 
-document.getElementById('BurgerMenuWrapper').addEventListener("click", function(){
 
-   var monMenu = document.getElementById('side-menu')
 
-    monMenu.classList.add("ouverture");
 
-});
