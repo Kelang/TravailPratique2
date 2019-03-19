@@ -172,14 +172,21 @@
     }
 
 
-    .site-branding h1{
+    .site-branding{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+            h1{
         padding: 1.5em;
+        
     }
+}
 
 
     #lesNouvelles, #lesEvenements{
-        margin-left: 2.5em;
+        margin-left: 8em;
         list-style: none;
+        width: 25em;
     }
 
 

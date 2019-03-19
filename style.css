@@ -302,12 +302,23 @@
     font-weight: normal;
     margin: 0;
   }
+  .site-branding {
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
   .site-branding h1 {
     padding: 1.5em;
   }
   #lesNouvelles, #lesEvenements {
-    margin-left: 2.5em;
+    margin-left: 8em;
     list-style: none;
+    width: 25em;
   }
 }
 
@@ -348,7 +359,7 @@
   border-bottom: 5px solid greenyellow;
 }
 
-main {
+#grilleCours {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;
@@ -358,7 +369,7 @@ main {
       align-content: center;
 }
 
-main article h2 {
+#grilleCours article h2 {
   font-size: 1em;
 }
 
@@ -370,7 +381,16 @@ main article h2 {
   .entry {
     margin: 0 0 0 0;
   }
-  main {
+  .nav-links {
+    width: 10em;
+  }
+  #comments {
+    display: none;
+  }
+  .post-navigation {
+    display: none;
+  }
+  #grilleCours {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: (1fr)[5];
@@ -379,16 +399,20 @@ main article h2 {
     grid-row-gap: 30px;
     -ms-flex-line-pack: center;
         align-content: center;
-    margin: 0 1em 1em 1em;
   }
-  main article {
-    -webkit-box-shadow: 5px 10px #888888;
+  #grilleCours article {
+    /*
             box-shadow: 5px 10px #888888;
-    border: 1px solid black;
+           border: 1px solid black;
+           */
   }
-  main article h2 {
+  #grilleCours article h2 {
     font-size: 1em;
     padding-bottom: 1em;
+  }
+  .entre-content img {
+    height: 15px;
+    width: 15px;
   }
 }
 /*# sourceMappingURL=style.css.map */

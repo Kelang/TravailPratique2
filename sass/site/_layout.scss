@@ -36,7 +36,7 @@
     border-bottom: 5px solid greenyellow;
 }
 
-main{
+#grilleCours{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 10px;
@@ -57,21 +57,41 @@ main{
     .entry{
         margin: 0 0 0 0;
     }
+    .nav-links{
+        width: 10em;
+    }
+    
+    #comments{
+        display: none;
+    }
 
-    main {
+    .post-navigation{
+        display: none;
+    }
+
+    #grilleCours {
         display: grid;
         grid-template-columns: repeat(5, 1fr);
         grid-gap: 30px;
         grid-row-gap: 30px;
         align-content: center;
-        margin: 0 1em 1em 1em;
+        //margin: 0 1em 1em 1em;
         article{
+            /*
             box-shadow: 5px 10px #888888;
            border: 1px solid black;
+           */
             h2{
                 font-size: 1em;
                 padding-bottom: 1em;
             }
+        }
+    }
+
+    .entre-content{
+        img{
+            height: 15px;
+            width: 15px;
         }
     }
 

@@ -20,10 +20,10 @@
 		<nav class="navContainer">
 			<button class="fermeture" id="fermetureMenu">X</button>
 			<a class="navLink souligner" href="/wordpress">Accueil</a>
-			<a class="navLink souligner" href="cours">Grille de cours</a>
-			<a class="navLink souligner" href="cours/tim-151/">TIM-151</a>
+			<a class="navLink souligner" href="/wordpress/cours">Grille de cours</a>
+			<a class="navLink souligner" href="cours/tim-131/">TIM-131</a>
 			<a class="navLink souligner" href="cours/tim-345/">TIM-345</a>
-			<a class="navLink souligner" href="cours/tim-535/">TIM-535</a>
+			<a class="navLink souligner" href="cours/tim-629/">TIM-629</a>
 		</nav>
 	</div>
 </div>
