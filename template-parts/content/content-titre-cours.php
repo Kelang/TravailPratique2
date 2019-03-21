@@ -11,14 +11,17 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php
-		$monTitre = get_the_title($post);
-		$noSession = substr($monTitre,4,1);
-		
-		the_title( sprintf( '<h2 class="entry-title, session%s"><a href="%s1" rel="bookmark">', $noSession, esc_url( get_permalink() ) ), '</a></h2>' );
-		?>
-	</header><!-- .entry-header -->
+<?php
 
-</article><!-- #post-${ID} -->
+$sigle = substr(get_the_title(),0,7);
+$session = substr($sigle,5,1);
+
+$titre = substr(get_the_title(),7);
+echo '<div class="entry-title'
+ . ' session-' . $session
+ . '  "><a href="'; 
+echo esc_url( get_permalink()) . '"';
+echo ' rel="bookmark"><h3>' . $sigle .'</h3><h4>' . $titre . '</h4></a></div>';
+// the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
+?>
+

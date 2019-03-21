@@ -137,7 +137,7 @@
 #BurgerMenuWrapper {
   display: block;
   position: absolute;
-  z-index: 1;
+  z-index: 999 !important;
   cursor: pointer;
 }
 
@@ -322,97 +322,147 @@
   }
 }
 
-/*
- Theme Name:   Twenty nineteen enfant
- Theme URI:    http://example.com/twenty-nineteen-enfant/
- Description:  Twenty nineteen enfant
- Author:       Kevin Langlois
- Author URI:   http://example.com
- Template:     twentynineteen
- Version:      1.0.0
- License:      GNU General Public License v2 or later
- License URI:  http://www.gnu.org/licenses/gpl-2.0.html
- Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
- Text Domain:  twenty-nineteen-enfant
-*/
-.session1 {
-  border-bottom: 5px solid blue;
-}
-
-.session2 {
-  border-bottom: 5px solid orange;
-}
-
-.session3 {
-  border-bottom: 5px solid red;
-}
-
-.session4 {
-  border-bottom: 5px solid purple;
-}
-
-.session5 {
-  border-bottom: 5px solid yellow;
-}
-
-.session6 {
-  border-bottom: 5px solid greenyellow;
-}
-
-#grilleCours {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
-  grid-gap: 10px;
-  -ms-flex-line-pack: center;
-      align-content: center;
-}
-
-#grilleCours article h2 {
+.entry .entry-content .has-large-font-size {
   font-size: 1em;
 }
 
-.entry {
-  margin: 0;
+.wp-block-media-text__content {
+  background-color: #f0f0f0;
+  margin-left: 2em;
+}
+
+.wp-block-columns {
+  background-color: #f0f0f0;
+  padding: 1em;
+}
+
+.entry-title {
+  border-bottom: 5px solid #000000;
+  display: inline-block;
+}
+
+.wp-block-column figure a {
+  color: #000000;
+}
+
+.wp-block-media-text__media figcaption a {
+  color: #000000;
+}
+
+#liste-cours {
+  margin-bottom: 0;
+}
+
+.liste-cours {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  grid-gap: 10px;
+  margin: 2% 2% 0% 15%;
+  font-size: 1.5em;
+}
+
+.liste-cours .session-1 {
+  border-bottom: 5px solid #33c06e;
+  color: #fff;
+  background-color: #333;
+}
+
+.liste-cours .session-2 {
+  border-bottom: 5px solid #d3a145;
+  color: #aaa;
+  background-color: #333;
+}
+
+.liste-cours .session-3 {
+  border-bottom: 5px solid #2f2f97;
+  color: #fff;
+  background-color: #333;
+}
+
+.liste-cours .session-4 {
+  border-bottom: 5px solid #c5c200;
+  color: #fff;
+  background-color: #333;
+}
+
+.liste-cours .session-5 {
+  border-bottom: 5px solid #97173d;
+  color: #fff;
+  background-color: #333;
+}
+
+.liste-cours .session-6 {
+  border-bottom: 5px solid #9c4716;
+  color: #fff;
+  background-color: #333;
+}
+
+.liste-cours h3, .liste-cours h4 {
+  padding: 5px;
+}
+
+@media only screen and (min-width: 600px) {
+  .liste-cours {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    font-size: 1.3em;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .liste-cours {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    font-size: 1em;
+  }
 }
 
 @media only screen and (min-width: 1168px) {
-  .entry {
-    margin: 0 0 0 0;
+  .liste-cours {
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+    grid-gap: 30px;
   }
-  .nav-links {
-    width: 10em;
-  }
-  #comments {
-    display: none;
-  }
-  .post-navigation {
-    display: none;
-  }
-  #grilleCours {
-    display: -ms-grid;
-    display: grid;
+}
+
+@media only screen and (min-width: 1379px) {
+  .liste-cours {
     -ms-grid-columns: (1fr)[5];
         grid-template-columns: repeat(5, 1fr);
-    grid-gap: 30px;
-    grid-row-gap: 30px;
-    -ms-flex-line-pack: center;
-        align-content: center;
+    grid-gap: 20px;
+    margin: 0 auto;
   }
-  #grilleCours article {
-    /*
-            box-shadow: 5px 10px #888888;
-           border: 1px solid black;
-           */
-  }
-  #grilleCours article h2 {
-    font-size: 1em;
-    padding-bottom: 1em;
-  }
-  .entre-content img {
-    height: 15px;
-    width: 15px;
-  }
+}
+
+.liste-cours .entry-title {
+  -webkit-box-shadow: 10px 10px #888888;
+          box-shadow: 10px 10px #888888;
+}
+
+.liste-cours .entry-title h3 {
+  font-size: .5em;
+  color: #fff;
+}
+
+.liste-cours .entry-title h4 {
+  font-size: .4em;
+  color: #fff;
+  display: inline-block;
+}
+
+.liste-cours .entry-title h4:hover {
+  color: #4e4e4e;
+  text-decoration: underline;
+}
+
+.liste-cours .entry-title:hover {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+  -webkit-transition-duration: .3s;
+          transition-duration: .3s;
 }
 /*# sourceMappingURL=style.css.map */

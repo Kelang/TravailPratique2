@@ -11,77 +11,78 @@
 
 get_header();
 ?>
+<!--//////////////////  front-page.php ////////////// -->
+<section id="primary" class="content-area">
+	<main id="main" class="site-main">
 
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main">
+	<?php
+		/* Start the Loop  La première boucle */
+		while ( have_posts() ) :
+			the_post();
+			get_template_part( 'template-parts/content/content', 'page' );
 
-        <section id="lesNouvelles">
-        <h2 class="widget-title">Nouvelles</h2>
-			<?php
-/*          
-			/* Start the Loop 
-			while ( have_posts() ) :
-				the_post();
+			// If comments are open or we have at least one comment, load up the comment template.
+			if ( comments_open() || get_comments_number() ) {
+				comments_template();
+			}
 
-				get_template_part( 'template-parts/content/content', 'page' );
+		endwhile; // End of the loop.
+		
+		?>
 
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) {
-					comments_template();
-				}
+<!--  /////////////////////////////////// La deuxième boucle pour les articles de catégorie Nouvelle -->
+	<?php
+		$args = array( 'post_type' => 'post',
+					   'category_name' => 'nouvelles',
+					   'posts_per_page' => 4);
 
-            endwhile; // End of the loop.
-  */          
-            
-            // The Query
-            $args = array('category_name' => 'nouvelles');
-            $query1 = new WP_Query( $args );
+		$query = new WP_Query ( $args );
+	
+		if ($query->have_posts() ) {
+	?>
 
-            if ( $query1->have_posts() ) {
-                // The Loop
-                while ( $query1->have_posts() ) {
-                    $query1->the_post();
-                    echo '<li>' . '<a href="'. get_permalink().'" target="_blank">'. get_the_title().'</a>' . '</li>';
-                }
-                
-                /* Restore original Post Data 
-                * NB: Because we are using new WP_Query we aren't stomping on the 
-                * original $wp_query and it does not need to be reset with 
-                * wp_reset_query(). We just need to set the post data back up with
-                * wp_reset_postdata().
-                */
-                wp_reset_postdata();
-            }
+<article  class="page type-page status-publish has-post-thumbnail hentry entry">
+	<div class="entry-content">
+		<div class="wp-block-columns has-4-columns">
+		<?php while ( $query->have_posts()) {
+				$query->the_post();
+				$leTitre = 'Nouvelles';
+				include(locate_template( 'template-parts/content/frontpage-quatre-images.php' ));
+			}			 
+	 wp_reset_postdata();
+	}
+?>
+		</div>	
 
-			?>
-            </section>
-            <section id="lesEvenements">
-            <h2 class="widget-title">Événements</h2>
-			<?php         
-            
-            /* The 2nd Query (without global var) */
-            $args2 = array('category_name' => 'evenements');
-            $query2 = new WP_Query( $args2 );
 
-            if ( $query2->have_posts() ) {
-                // The 2nd Loop
-                while ( $query2->have_posts() ) {
-                    $query2->the_post();
-                    
-                    echo '<li>' . '<a href="'. get_permalink().'" target="_blank">'. get_the_title( $query2->post->ID ).'</a>' . '</li>';
-                }
+<!--  ////////////////////// La troisième boucle pour les articles de catégorie  événement  -->
 
-                // Restore original Post Data
-                wp_reset_postdata();
-            }
+<?php
+		$args = array( 'post_type' => 'post',
+					   'category_name' => 'evenements',
+					   'posts_per_page' => 4
+					);
 
-			?>
-            </section>
+		$query = new WP_Query ( $args );
+	
+		if ($query->have_posts() ) {
+	?>
 
-            
+		<?php while ( $query->have_posts()) {
+				$query->the_post();
+				include(locate_template( 'template-parts/content/frontpage-une-image.php' ));
+			}			 
 
-		</main><!-- #main -->
-	</section><!-- #primary -->
+	 wp_reset_postdata();
+	}
+?>
+	</div>	
+</article>	
+<!--  ///////////////////////////////////////////////////////////////////////// -->
+
+	</main><!-- #main -->
+</section><!-- #primary -->
 
 <?php
 get_footer();
+?>
