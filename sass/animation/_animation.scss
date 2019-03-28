@@ -45,3 +45,7 @@
     }
   }
   
+
+  @for $i from 1 to 4 {
+    .site-branding div:nth-child(#{$i}) { animation-delay: $i * 0.25s; }
+  }
