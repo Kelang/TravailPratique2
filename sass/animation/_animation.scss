@@ -4,7 +4,6 @@
 .main-title-animation{
     animation: descend 1s forwards;
   }
-  
   @keyframes descend{
     0%{
       transform: translateY(-2em);
