@@ -7,7 +7,6 @@
  * @since 1.0.0
  */
 ?>
-
 <div id="BurgerMenuWrapper">
 	<div class="BurgerMenu menu">
 		<div class="BurgerMenuLine line1"></div>
