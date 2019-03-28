@@ -12,7 +12,6 @@
 ?>
 
 <?php
-
 $sigle = substr(get_the_title(),0,7);
 $session = substr($sigle,5,1);
 
